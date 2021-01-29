@@ -1,5 +1,5 @@
 import { NextPage } from 'next'
-import Main from '~app/components/Main'
+import Main from 'components/Main'
 
 const Home: NextPage = () => {
   return <Main />
