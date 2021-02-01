@@ -38,8 +38,6 @@ const GlobalStyles = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
   }
 
-
-
   html, body, #__next {
     height: 100%;
   }
@@ -54,7 +52,6 @@ const GlobalStyles = createGlobalStyle`
       font-size: ${theme.font.sizes.medium};
     }
   `}
-
 `
 
 export default GlobalStyles
