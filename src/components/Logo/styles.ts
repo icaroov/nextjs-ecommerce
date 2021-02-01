@@ -15,7 +15,7 @@ const containerModifiers = {
   `,
 
   hideOnMobile: () => css`
-    ${media.lessThan('medium')`
+    ${media.lessThan('medium')` // 768px
   width: 5.8rem;
   height: 4.5rem;
 
