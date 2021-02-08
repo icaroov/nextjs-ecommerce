@@ -5,6 +5,7 @@ import { Search as SearchIcon } from '@styled-icons/material-outlined/Search'
 import { Close as CloseIcon } from '@styled-icons/material-outlined/Close'
 
 import Logo from 'components/Logo'
+import Button from 'components/Button'
 
 import * as Styled from './styles'
 
@@ -33,6 +34,20 @@ const Menu = () => {
 
       <Styled.FullMenu aria-hidden={!isOpen} isOpen={isOpen}>
         <CloseIcon aria-label="Close Menu" onClick={() => setIsOpen(false)} />
+        <Styled.MenuNav>
+          <Styled.MenuLink href="#">Home</Styled.MenuLink>
+          <Styled.MenuLink href="#">Explore</Styled.MenuLink>
+        </Styled.MenuNav>
+
+        <Styled.RegisterBox>
+          <Button fullWidth size="large">
+            Login
+          </Button>
+          <span>or</span>
+          <Styled.CreateAccount href="#" title="Sign Up">
+            Sign Up
+          </Styled.CreateAccount>
+        </Styled.RegisterBox>
       </Styled.FullMenu>
     </Styled.Container>
   )
