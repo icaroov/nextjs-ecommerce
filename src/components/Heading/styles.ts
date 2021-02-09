@@ -1,15 +1,15 @@
 import styled, { css, DefaultTheme } from 'styled-components'
 import media from 'styled-media-query'
 
-import { HeadingProps } from '.'
+import { HeadingProps, LineColors } from '.'
 
 const containerModifiers = {
-  lineLeft: (theme: DefaultTheme) => css`
+  lineLeft: (theme: DefaultTheme, lineColor: LineColors) => css`
     padding-left: ${theme.spacings.xxsmall};
-    border-left: 0.7rem solid ${theme.colors.secondary};
+    border-left: 0.7rem solid ${theme.colors[lineColor]};
   `,
 
-  lineBottom: (theme: DefaultTheme) => css`
+  lineBottom: (theme: DefaultTheme, lineColor: LineColors) => css`
     position: relative;
     margin-bottom: ${theme.spacings.medium};
 
@@ -20,22 +20,48 @@ const containerModifiers = {
       bottom: -1rem;
 
       width: 5rem;
-      border-bottom: 0.5rem solid ${theme.colors.primary};
+      border-bottom: 0.5rem solid ${theme.colors[lineColor]};
     }
-  `
-}
+  `,
 
-export const Container = styled.h2<HeadingProps>`
-  ${({ theme, color = 'black', lineLeft, lineBottom }) => css`
-    color: ${theme.colors[color]};
+  normal: (theme: DefaultTheme) => css`
     font-size: ${theme.font.sizes.xlarge};
 
     ${media.greaterThan('medium')`
       font-size: ${theme.font.sizes.xxlarge};
     `}
+  `,
 
-    ${lineLeft && containerModifiers.lineLeft(theme)};
+  small: (theme: DefaultTheme) => css`
+    font-size: ${theme.font.sizes.medium};
 
-    ${lineBottom && containerModifiers.lineBottom(theme)};
+    &::after {
+      width: 3rem;
+    }
+  `,
+
+  primary: (theme: DefaultTheme) => css`
+    border-color: ${theme.colors.primary};
+  `,
+
+  secondary: (theme: DefaultTheme) => css`
+    border-color: ${theme.colors.secondary};
+  `
+}
+
+export const Container = styled.h2<HeadingProps>`
+  ${({
+    theme,
+    color = 'black',
+    size = 'normal',
+    lineColor = 'primary',
+    lineLeft,
+    lineBottom
+  }) => css`
+    color: ${theme.colors[color]};
+
+    ${lineLeft && containerModifiers.lineLeft(theme, lineColor)};
+    ${lineBottom && containerModifiers.lineBottom(theme, lineColor)};
+    ${!!size && containerModifiers[size](theme)};
   `}
 `
