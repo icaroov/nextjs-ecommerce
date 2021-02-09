@@ -24,6 +24,7 @@ export const MenuGroup = styled.div`
     display: flex;
     flex-grow: 1;
     justify-content: flex-end;
+    align-items: center;
 
     div:not(:first-child) {
       margin-left: ${theme.spacings.xsmall};
@@ -36,12 +37,18 @@ export const IconContainer = styled.div`
     width: 2.4rem;
     height: 2.4rem;
 
-    color: ${theme.colors.black};
+    color: ${theme.colors.white};
     cursor: pointer;
   `}
 `
 
-export const MenuNav = styled.div``
+export const MenuNav = styled.div`
+  ${({ theme }) => css`
+    ${media.greaterThan('medium')`
+      margin-left: ${theme.spacings.small};
+    `}
+  `}
+`
 
 export const MenuLink = styled.a`
   ${({ theme }) => css`
@@ -52,6 +59,7 @@ export const MenuLink = styled.a`
     text-decoration: none;
 
     font-size: ${theme.font.sizes.medium};
+    color: ${theme.colors.white};
 
     &:hover {
       &::after {
