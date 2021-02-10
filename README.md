@@ -1,30 +1,58 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div align="center">
+  <img src="https://reactavancado.com.br/_next/static/images/project-db6268e4a60540001885db9efb55013f.png.webp" alt="won games">
+</div>
 
-## Getting Started
+# 🎮 Won Games
 
-First, run the development server:
+Project created from the Next.js + TypeScript boilerplate.
+
+## 🚀 How to run
+
+### Installing dependencies
 
 ```bash
-npm run dev
-# or
-yarn dev
+# Clone this repository
+$ git clone https://github.com/icaroov/nextjs-ecommerce.git
+
+# Access the project folder
+$ cd nextjs-ecommerce
+
+# Install dependencies
+$ yarn
+
+# Run the application
+$ yarn start
+
+# The server will start on the port:8000 - access http://localhost:8000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Commands
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+- `dev`: runs your application on `localhost:3000`
+- `build`: creates the production build version
+- `start`: starts a simple server with the build production code
+- `lint`: runs the linter in all components and pages
+- `test`: runs jest to test all components and pages
+- `test:watch`: runs jest in watch mode
+- `storybook`: runs storybook on `localhost:6006`
+- `build-storybook`: create the build version of storybook
 
-## Learn More
+## Deployment
 
-To learn more about Next.js, take a look at the following resources:
+In the future, the entire frontend will be deployed at [Vercel](https://vercel.com/).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Built With
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- 💙 [TypeScript](https://www.typescriptlang.org/)
+- 🏴 [NextJS](https://nextjs.org/)
+- 💅 [Styled Components](https://styled-components.com/)
+- 🐐 [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
+- 🃏  [Jest](https://jestjs.io/)
+- 📔 [Storybook](https://storybook.js.org/)
+- 📏 [Eslint](https://eslint.org/)
+- 💖 [Prettier](https://prettier.io/)
+- 🐶 [Husky](https://github.com/typicode/husky)
 
-## Deploy on Vercel
+## Acknowledgments
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+* To the [Advanced React Course](https://www.udemy.com/course/react-avancado/) for teaching how to create this fantastic and full of learning project.
