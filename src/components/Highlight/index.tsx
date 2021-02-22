@@ -8,6 +8,7 @@ export type HighlightProps = {
   buttonLink: string
   backgroundImage: string
   floatImage?: string
+  alignLeft?: boolean
 }
 
 const Highlight = ({
@@ -16,9 +17,10 @@ const Highlight = ({
   buttonLabel,
   buttonLink,
   backgroundImage,
-  floatImage
+  floatImage,
+  alignLeft = false
 }: HighlightProps) => (
-  <Styled.Container backgroundImage={backgroundImage}>
+  <Styled.Container backgroundImage={backgroundImage} alignLeft={alignLeft}>
     {!!floatImage && <Styled.FloatImage src={floatImage} alt={title} />}
     <Styled.Content>
       <Styled.Title>{title}</Styled.Title>

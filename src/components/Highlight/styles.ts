@@ -2,10 +2,25 @@ import styled, { css } from 'styled-components'
 import media from 'styled-media-query'
 import { HighlightProps } from '.'
 
-type ContainerProps = Pick<HighlightProps, 'backgroundImage'>
+type ContainerProps = Pick<HighlightProps, 'backgroundImage' | 'alignLeft'>
+
+const containerModifiers = {
+  alignLeft: () => css`
+    grid-template-areas: 'content floatimage';
+    grid-template-columns: 2fr 1.3fr;
+
+    ${Content} {
+      text-align: left;
+    }
+
+    ${FloatImage} {
+      justify-self: end;
+    }
+  `
+}
 
 export const Container = styled.section<ContainerProps>`
-  ${({ backgroundImage }) => css`
+  ${({ backgroundImage, alignLeft }) => css`
     position: relative;
 
     display: grid;
@@ -31,6 +46,8 @@ export const Container = styled.section<ContainerProps>`
     ${media.greaterThan('medium')`
       height: 32rem;
     `}
+
+    ${!!alignLeft && containerModifiers.alignLeft()}
   `}
 `
 
@@ -54,7 +71,7 @@ export const Content = styled.div`
   ${({ theme }) => css`
     grid-area: content;
     z-index: ${theme.layers.base};
-    text-align: end;
+    text-align: right;
     padding: ${theme.spacings.xsmall};
 
     ${media.greaterThan('medium')`
