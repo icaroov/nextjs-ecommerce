@@ -9,6 +9,9 @@ export const Container = styled.section<ContainerProps>`
     position: relative;
 
     display: grid;
+    grid-template-areas: 'floatimage content';
+    grid-template-columns: 1.3fr 2fr;
+
     height: 23rem;
 
     background-image: url(${backgroundImage});
@@ -31,8 +34,25 @@ export const Container = styled.section<ContainerProps>`
   `}
 `
 
+export const FloatImage = styled.img`
+  ${({ theme }) => css`
+    grid-area: floatimage;
+
+    max-width: 100%;
+    max-height: 23rem;
+
+    align-self: end;
+    z-index: ${theme.layers.base};
+
+    ${media.greaterThan('medium')`
+      max-height: 32rem;
+    `}
+  `}
+`
+
 export const Content = styled.div`
   ${({ theme }) => css`
+    grid-area: content;
     z-index: ${theme.layers.base};
     text-align: end;
     padding: ${theme.spacings.xsmall};
@@ -46,6 +66,7 @@ export const Content = styled.div`
 
 export const Title = styled.h2`
   ${({ theme }) => css`
+    font-size: ${theme.font.sizes.large};
     font-weight: ${theme.font.bold};
     color: ${theme.colors.white};
 
@@ -57,9 +78,11 @@ export const Title = styled.h2`
 
 export const Subtitle = styled.h3`
   ${({ theme }) => css`
+    margin-bottom: ${theme.spacings.medium};
+
+    font-size: ${theme.font.sizes.small};
     font-weight: ${theme.font.light};
     color: ${theme.colors.white};
-    margin-bottom: ${theme.spacings.medium};
 
     ${media.greaterThan('medium')`
       font-size: ${theme.font.sizes.large};
