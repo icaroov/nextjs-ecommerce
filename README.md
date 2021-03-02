@@ -1,9 +1,7 @@
 <div align="center">
   <img src="public/assets/img/logo.svg" alt="won games">
-  <h2>Project created from the Next.js + TypeScript boilerplate.</h2>
+  <h3>Project created from the <a href="https://github.com/icaroov/nextjs-typescript-boilerplate">Next.js + TypeScript</a> boilerplate.</h3>
 </div>
-
-<hr>
 
 ## 🚀 How to run
 
