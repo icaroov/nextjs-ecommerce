@@ -1,6 +1,6 @@
 <div align="center">
-  <img src="public/assets/img/logo.svg" width="500px" alt="won games">
-Project created from the Next.js + TypeScript boilerplate.
+  <img src="public/assets/img/logo.svg" alt="won games">
+  <h2>Project created from the Next.js + TypeScript boilerplate.</h2>
 </div>
 
 <hr>
