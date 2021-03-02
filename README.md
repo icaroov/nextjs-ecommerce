@@ -1,10 +1,9 @@
 <div align="center">
-  <img src="https://reactavancado.com.br/_next/static/images/project-db6268e4a60540001885db9efb55013f.png.webp" alt="won games">
+  <img src="public/assets/img/logo.svg" width="500px" alt="won games">
+Project created from the Next.js + TypeScript boilerplate.
 </div>
 
-# 🎮 Won Games
-
-Project created from the Next.js + TypeScript boilerplate.
+<hr>
 
 ## 🚀 How to run
 
