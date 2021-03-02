@@ -16,26 +16,23 @@ describe('<Banner />', () => {
   it('should render the banner correctly', () => {
     const { container } = renderWithTheme(<Banner {...props} />)
 
-    expect(screen.getByRole('img')).toHaveAttribute(
-      'src',
-      'https://sm.ign.com/ign_br/screenshot/default/world-of-warcraft-classic-onyxia_y46q.jpg'
-    )
+    expect(screen.getByRole('img')).toHaveAttribute('src', props.img)
 
     expect(
-      screen.getByRole('heading', { name: /world of warcraft/i })
+      screen.getByRole('heading', { name: props.title })
     ).toBeInTheDocument()
 
     expect(
       screen.getByRole('heading', {
-        name: /Play the new expansion right now!/i
+        name: props.subtitle
       })
     ).toBeInTheDocument()
 
     expect(
       screen.getByRole('link', {
-        name: /buy now/i
+        name: props.buttonLabel
       })
-    ).toHaveAttribute('href', '/games/world-of-warcraft')
+    ).toHaveAttribute('href', props.buttonLink)
 
     expect(container.firstChild).toMatchSnapshot()
   })
