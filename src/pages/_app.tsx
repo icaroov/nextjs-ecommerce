@@ -9,14 +9,11 @@ function App({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={theme}>
       <Head>
-        <title>NextJS Boilerplate</title>
+        <title>Won Games</title>
         <link rel="shortcut icon" href="/assets/img/icon-2.png" />
         <link rel="apple-touch-icon" href="/assets/img/icon-2.png" />
-        <link rel="manifest" href="/manifest.json" />
-        <meta
-          name="description"
-          content="A TypeScript + Next.js boilerplate that includes all you need to build fantastic projects."
-        />
+        <link rel="manifest" href="assets/manifest.json" />
+        <meta name="description" content="The Game Store in the world!" />
       </Head>
       <GlobalStyles />
       <Component {...pageProps} />
