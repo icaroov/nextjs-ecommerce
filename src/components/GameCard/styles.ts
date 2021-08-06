@@ -1,4 +1,5 @@
 import styled, { css, DefaultTheme } from 'styled-components'
+import media from 'styled-media-query'
 
 export const Container = styled.article`
   ${({ theme }) => css`
@@ -131,6 +132,10 @@ export const Price = styled.div<PriceProps>`
     height: 3rem;
 
     font-weight: ${theme.font.bold};
+
+    ${media.lessThan('medium')`
+      font-size: ${theme.font.sizes.small};
+    `}
 
     ${!isPromotional && priceModifiers.default(theme)};
     ${isPromotional && priceModifiers.promotional(theme)};
