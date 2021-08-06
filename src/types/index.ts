@@ -1,3 +1,4 @@
+// Components
 export type { BannerProps } from 'components/Banner'
 export type { BannerSliderProps } from 'components/BannerSlider'
 
@@ -20,3 +21,6 @@ export type { MenuProps } from 'components/Menu'
 export type { RibbonProps } from 'components/Ribbon'
 
 export type { SliderProps } from 'components/Slider'
+
+// Templates
+export type { HomeTemplateProps } from 'templates/Home'
