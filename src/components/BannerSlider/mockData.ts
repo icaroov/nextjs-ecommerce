@@ -7,7 +7,7 @@ export const images = {
     'https://res.cloudinary.com/ddi5agea1/image/upload/v1614719458/wow3_z4fkd4.jpg'
 }
 
-export const items = [
+export default [
   {
     img: images.image1,
     title: 'World of Warcraft 1',

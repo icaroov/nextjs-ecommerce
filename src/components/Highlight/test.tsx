@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react'
 
 import { renderWithTheme } from 'utils/tests/helpers'
-import { HIGHLIGHT_MOCK } from './mockData'
+import HIGHLIGHT_MOCK from './mockData'
 
 import Highlight from '.'
 import * as Styled from './styles'
