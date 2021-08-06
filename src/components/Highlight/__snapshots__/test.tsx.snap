@@ -106,16 +106,16 @@ exports[`<Highlight /> should render the heading 1`] = `
     <h2
       class="c2"
     >
-      Heading 1
+      Read Dead is back
     </h2>
     <h3
       class="c3"
     >
-      Heading 2
+      Come see John's new adventures
     </h3>
     <a
       class="c4"
-      href="#"
+      href="/games/rdr2"
     >
       <span>
         Buy Now

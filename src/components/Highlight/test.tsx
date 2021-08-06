@@ -1,27 +1,21 @@
 import { screen } from '@testing-library/react'
+
 import { renderWithTheme } from 'utils/tests/helpers'
+import { HIGHLIGHT_MOCK } from './mockData'
 
 import Highlight from '.'
 import * as Styled from './styles'
 
-const props = {
-  title: 'Heading 1',
-  subtitle: 'Heading 2',
-  backgroundImage: '/assets/img/red-dead-img.jpg',
-  buttonLabel: 'Buy Now',
-  buttonLink: '#'
-}
-
 describe('<Highlight />', () => {
   it('should render the heading', () => {
-    const { container } = renderWithTheme(<Highlight {...props} />)
+    const { container } = renderWithTheme(<Highlight {...HIGHLIGHT_MOCK} />)
 
     expect(
-      screen.getByRole('heading', { name: /heading 1/i })
+      screen.getByRole('heading', { name: /read dead is back/i })
     ).toBeInTheDocument()
 
     expect(
-      screen.getByRole('heading', { name: /heading 2/i })
+      screen.getByRole('heading', { name: /come see john's new adventures/i })
     ).toBeInTheDocument()
 
     expect(screen.getByRole('link', { name: /buy now/i })).toBeInTheDocument()
@@ -30,24 +24,25 @@ describe('<Highlight />', () => {
   })
 
   it('should render the background image', () => {
-    const { container } = renderWithTheme(<Highlight {...props} />)
+    const { container } = renderWithTheme(<Highlight {...HIGHLIGHT_MOCK} />)
 
     expect(container.firstChild).toHaveStyle({
-      backgroundImage: `url(${props.backgroundImage})`
+      backgroundImage: `url(${HIGHLIGHT_MOCK.backgroundImage})`
     })
   })
 
   it('should render the float image image', () => {
-    renderWithTheme(<Highlight {...props} floatImage="float-image.png" />)
-
-    expect(screen.getByRole('img', { name: props.title })).toHaveAttribute(
-      'src',
-      'float-image.png'
+    renderWithTheme(
+      <Highlight {...HIGHLIGHT_MOCK} floatImage="float-image.png" />
     )
+
+    expect(
+      screen.getByRole('img', { name: HIGHLIGHT_MOCK.title })
+    ).toHaveAttribute('src', 'float-image.png')
   })
 
   it('should render align right by default', () => {
-    const { container } = renderWithTheme(<Highlight {...props} />)
+    const { container } = renderWithTheme(<Highlight {...HIGHLIGHT_MOCK} />)
 
     expect(container.firstChild).toHaveStyleRule(
       'grid-template-areas',
@@ -56,7 +51,9 @@ describe('<Highlight />', () => {
   })
 
   it('should render align left', () => {
-    const { container } = renderWithTheme(<Highlight {...props} alignLeft />)
+    const { container } = renderWithTheme(
+      <Highlight {...HIGHLIGHT_MOCK} alignLeft />
+    )
 
     expect(container.firstChild).toHaveStyleRule(
       'grid-template-areas',
