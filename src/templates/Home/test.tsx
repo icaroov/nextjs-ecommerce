@@ -9,34 +9,35 @@ import highLightMock from 'components/Highlight/mockData'
 
 const props = {
   banners: bannersMock,
-  newGames: gamesMock,
+  newGames: [gamesMock[0]],
   mostPopularHighlight: highLightMock,
-  mostPopularGames: gamesMock,
-  upcommingGames: gamesMock,
+  mostPopularGames: [gamesMock[0]],
+  upcommingGames: [gamesMock[0]],
   upcommingHighlight: highLightMock,
-  upcommingMoreGames: gamesMock,
-  freeGames: gamesMock,
+  upcommingMoreGames: [gamesMock[0]],
+  freeGames: [gamesMock[0]],
   freeHighlight: highLightMock
 }
 
 import Home from '.'
 
 describe('<Home />', () => {
-  it('should render the menu and footer', () => {
+  it('should render the menu, footer and sections correctly', () => {
     renderWithTheme(<Home {...props} />)
 
+    // menu
     expect(screen.getByLabelText(/open menu/i)).toBeInTheDocument()
 
+    // footer
     expect(
       screen.getByRole('heading', { name: /contact/i })
     ).toBeInTheDocument()
-  })
-
-  it('should render all sections in the Home Page', () => {
-    renderWithTheme(<Home {...props} />)
-
     expect(screen.getByRole('heading', { name: /news/i })).toBeInTheDocument()
 
+    // logos
+    expect(screen.getAllByRole('img', { name: /won games/i })).toHaveLength(2)
+
+    // sections
     expect(
       screen.getByRole('heading', { name: /most popular/i })
     ).toBeInTheDocument()

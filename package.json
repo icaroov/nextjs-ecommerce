@@ -1,13 +1,13 @@
 {
-  "name": "web",
-  "description": "A TypeScript + Next.js boilerplate that includes all you need to build fantastic projects",
+  "name": "won-games",
+  "description": "The best game store in the world!",
   "version": "1.0.0",
-  "private": true,
-  "author": "Icaro Oliveira <icarovinici@gmail.com> (icaroov)",
+  "private": false,
+  "author": "Icaro Oliveira <icarovinici@gmail.com>",
   "license": "MIT",
   "keywords": [
     "nextjs",
-    "boilerplate",
+    "ecommerce",
     "typescript"
   ],
   "scripts": {
