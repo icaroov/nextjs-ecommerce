@@ -16,6 +16,7 @@
     "start": "next start",
     "commit": "cz",
     "lint": "eslint src --max-warnings=0",
+    "typecheck": "tsc --project tsconfig.json --noEmit",
     "test": "jest",
     "generate": "yarn plop --plopfile generators/plopfile.js",
     "test:watch": "yarn test --watch",
