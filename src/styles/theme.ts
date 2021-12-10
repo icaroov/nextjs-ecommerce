@@ -3,6 +3,11 @@ export default {
     container: '130rem',
     gutter: '3.2rem'
   },
+  transition: {
+    short: '0.1s ease-in-out',
+    medium: '0.3s ease-in-out',
+    long: '0.5s ease-in-out'
+  },
   border: {
     radius: '0.4rem'
   },

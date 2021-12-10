@@ -109,7 +109,7 @@ export const FullMenu = styled.nav<FullMenuProps>`
     overflow: hidden;
 
     opacity: ${isOpen ? 1 : 0};
-    transition: opacity 0.2s ease-in-out;
+    transition: opacity ${theme.transition.short};
     pointer-events: ${isOpen ? 'all' : 'none'};
 
     background: ${theme.colors.white};
@@ -144,12 +144,12 @@ export const FullMenu = styled.nav<FullMenuProps>`
       font-size: ${theme.font.sizes.xlarge};
 
       transform: ${isOpen ? 'translateY(0)' : 'translateY(3rem)'};
-      transition: transform 0.3s ease-in-out;
+      transition: transform ${theme.transition.medium};
     }
 
     ${RegisterBox} {
       transform: ${isOpen ? 'translateY(0)' : 'translateY(3rem)'};
-      transition: transform 0.3s ease-in-out;
+      transition: transform ${theme.transition.medium};
     }
   `}
 `
